@@ -16,7 +16,6 @@ header {
     border-bottom: 3px solid #fff;
 }
 
-
 header .logo {
     width: 80px;
     height: auto;
@@ -89,20 +88,20 @@ section h2::after {
 /* Team Section */
 .team-members {
     display: flex;
-    flex-direction: row; /* Susun secara mendatar */
-    justify-content: space-around; /* Susun dengan ruang yang sama antara pemain */
-    flex-wrap: wrap; /* Biarkan kad membungkus ke baris baru */
-    margin: 0 auto; /* Pusatkan keseluruhan section */
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .player {
     background-color: #222;
     padding: 20px;
     text-align: center;
-    width: 150px; /* Set a width for the player cards */
+    width: 150px;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 15px; /* Tambah ruang antara kad pemain */
+    margin: 15px;
 }
 
 .player img {
@@ -125,19 +124,18 @@ section h2::after {
 }
 
 .player:hover {
-    transform: translateY(-10px); /* Hover effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
-
 
 /* Training Section */
 #upcoming-matches .match {
-    background-color: #333; /* Dark background for match info */
+    background-color: #333;
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
     max-width: 600px;
-    border: 2px solid #e60000; /* Red border around match details */
+    border: 2px solid #e60000;
 }
 
 #upcoming-matches .match p {
@@ -174,7 +172,6 @@ section h2::after {
     margin: 10px 0;
 }
 
-
 /* Contact Section */
 #contact {
     background-color: #222;
@@ -187,7 +184,7 @@ section h2::after {
 }
 
 #contact strong {
-    color: #e60000; /* Highlighted red email */
+    color: #e60000;
 }
 
 /* Button Styles */
@@ -220,5 +217,47 @@ footer {
 
 footer p {
     margin: 0;
-    color: #e60000; /* Red text for footer */
+    color: #e60000;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+
+    .team-members {
+        display: block;
+        text-align: center;
+    }
+
+    .player {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    #Upcoming-news .news {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Upcoming-news .news-img {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }
