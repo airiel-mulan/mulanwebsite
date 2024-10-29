@@ -6,29 +6,68 @@
     <link rel="icon" type="image/png" href="img/logo2.png">
     <title>Mulan Academy</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <script>
+        // JavaScript for scroll animations and menu toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollElements = document.querySelectorAll(".scroll-animation");
+            const menuContent = document.getElementById("menu-content");
+            
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add("scrolled");
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    }
+                });
+            };
+
+            const toggleMenu = () => {
+                if (menuContent.style.display === "block") {
+                    menuContent.style.display = "none";
+                } else {
+                    menuContent.style.display = "block";
+                }
+            };
+
+            window.addEventListener("scroll", handleScrollAnimation);
+            document.querySelector(".menu-btn").addEventListener("click", toggleMenu);
+        });
+    </script>
 </head>
 <body>
 
-    <header>
+    <header class="scroll-animation">
+        <div class="menu-btn">☰ Menu</div> <!-- Moved here -->
         <img src="img/logo2.png" alt="Mulan Academy Club Logo" class="logo">
         <h1>Welcome to Mulan Academy Page</h1>
         <p>Home of the future football stars!</p>
     </header>
 
-    <nav>
+    <!-- Hidden menu content -->
+    <nav id="menu-content">
         <a href="#about">About Us</a>
         <a href="#team">Our Team</a>
         <a href="#upcoming-matches">Training</a>
-        <a href="#Upcoming-news">News</a>
+        <a href="#upcoming-news">News</a>
         <a href="#contact">Contact Us</a>
     </nav>
-
-    <section id="about">
+    
+    <section id="about" class="scroll-animation">
         <h2>About Us</h2>
         <p>We are a community-driven football club dedicated to nurturing young talent. Our under-15 team is passionate about the game and learning the importance of teamwork, discipline, and fun.</p>
     </section>
 
-    <section id="team">
+    <section id="team" class="scroll-animation">
         <h2>Our Team</h2>
         <div class="team-members">
             <div class="player">
@@ -69,7 +108,7 @@
         </div>
     </section>
 
-    <section id="upcoming-matches">
+    <section id="upcoming-matches" class="scroll-animation">
         <h2>Training</h2>
         <div class="match">
             <p><strong>Date:</strong> October 28, 2024</p>
@@ -79,7 +118,7 @@
         </div>
     </section>
     
-    <section id="Upcoming-news">
+    <section id="upcoming-news" class="scroll-animation">
         <h2>Latest News</h2>
         <div class="news">
             <img src="img/iskandar.jpg" alt="Iskandar's Training Session" class="news-img">
@@ -91,12 +130,12 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="scroll-animation">
         <h2>Contact Us</h2>
         <p>Interested in joining or sponsoring our team? Contact us at <strong>academymulan23@gmail.com</strong></p>
     </section>
 
-    <footer>
+    <footer class="scroll-animation">
         <p>&copy; 2024 Mulan Academy. All rights reserved.</p>
     </footer>
 
