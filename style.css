@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #111; /* Gambar banner */
+    background-color: #000; /* Gambar banner */
     background-size: cover; /* Meliputi seluruh bahagian header */
     background-position: center; /* Pusatkan gambar */
     padding: 20px;
@@ -21,6 +21,46 @@ header .logo {
     height: auto;
     margin-bottom: 10px;
 }
+.menu-btn {
+    position: absolute; /* Absolute positioning */
+    left: 20px; /* Distance from the left side */
+    top: 20px; /* Distance from the top */
+    background-color: #e60000;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
+    border: none; /* No border */
+    border-radius: 5px; /* Slight rounding of corners */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #fff; /* Change background on hover */
+    color: #e60000; /* Change text color on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Hidden Menu Content */
+#menu-content {
+    display: none;
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+#menu-content a {
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+}
+
+#menu-content a:hover {
+    color: #e60000;
+}
 
 h1 {
     font-size: 3em;
@@ -32,33 +72,36 @@ p {
     font-size: 1.2em;
 }
 
-/* Navbar Styles */
-nav {
-    background-color: #000; /* Black navbar */
-    padding: 10px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 3px solid #e60000;
-}
-
-nav a {
+/* Menu Button */
+.menu-btn {
+    background-color: #e60000;
     color: #fff;
-    margin: 0 20px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
 }
 
-nav a:hover {
-    background-color: #e60000; /* Red background on hover */
-    color: #000; /* Black text on hover */
-    border-radius: 5px;
+/* Hidden Menu Content */
+#menu-content {
+    display: none;
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
 }
+
+#menu-content a {
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+}
+
+#menu-content a:hover {
+    color: #e60000;
+}
+
 
 /* Section Styles */
 section {
@@ -218,6 +261,18 @@ footer {
 footer p {
     margin: 0;
     color: #e60000;
+}
+
+/* Scroll Animation Styles */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animation.scrolled {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive Styles for Mobile */
